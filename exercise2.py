@@ -2,7 +2,6 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import dash
 import plotly.graph_objs as go
 
 
@@ -14,7 +13,7 @@ import plotly.graph_objs as go
 # static data
 countries = ['Pakistan','Qatar','Afghanistan','Bangladesh','Egypt']
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, static_folder = 'static')
 
 # set up an layout
 app.layout = html.Div(children=[
@@ -46,11 +45,11 @@ app.layout = html.Div(children=[
                 )
             ],
             'layout': {
-                'title': 'Car Dataset 2004',
+                'title': 'Population vs Pollution',
                 # It is always a good practice to have axis labels.
                 # This is especially important in this case as the numbers are not trivial
-                'xaxis': {'title': 'Horse Power'},
-                'yaxis': {'title': 'Weight'},
+                'xaxis': {'title': 'Pollution'},
+                'yaxis': {'title': 'Population(Millions)'},
             }
         }
     ),
